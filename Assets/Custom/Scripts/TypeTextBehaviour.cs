@@ -50,6 +50,7 @@ public class TypeTextBehaviour : MonoBehaviour
     {
         if (targetText.Length <= text.text.Length)
         {
+            GlobalState.Instance.PlayerCanMove = true;
             return;
         }
 
@@ -67,6 +68,8 @@ public class TypeTextBehaviour : MonoBehaviour
         targetText = s;
         text.text = "";
         counter = ticksPerType;
+        
+        GlobalState.Instance.PlayerCanMove = false;
     }
 
     public void EnqueueText(string s)
@@ -79,6 +82,8 @@ public class TypeTextBehaviour : MonoBehaviour
         targetText = (string) stringQueue.Dequeue();
         text.text = "";
         counter = ticksPerType;
+
+        GlobalState.Instance.PlayerCanMove = false;
     }
 }
 

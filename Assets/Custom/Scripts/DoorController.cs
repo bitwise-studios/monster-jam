@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityStandardAssets.CrossPlatformInput;
 
 public class DoorController : MonoBehaviour {
 
@@ -14,7 +15,7 @@ public class DoorController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (playerInDoor && Input.GetButtonDown("EnterDoor"))
+        if (playerInDoor && CrossPlatformInputManager.GetButtonDown("EnterDoor") && GlobalState.Instance.PlayerCanMove)
         {
             Application.LoadLevel(m_level_name);
         }

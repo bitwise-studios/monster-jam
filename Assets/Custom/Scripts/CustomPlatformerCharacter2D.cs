@@ -47,7 +47,7 @@ public class CustomPlatformerCharacter2D : MonoBehaviour
         Collider2D[] colliders = Physics2D.OverlapCircleAll(m_GroundCheck.position, k_GroundedRadius, m_WhatIsGround);
         for (int i = 0; i < colliders.Length; i++)
         {
-            if (colliders[i].gameObject.layer == LayerMask.NameToLayer("Ground"))
+            if (colliders[i].gameObject != gameObject)
                 m_Grounded = true;
         }
         m_Anim.SetBool("Ground", m_Grounded);
@@ -56,8 +56,21 @@ public class CustomPlatformerCharacter2D : MonoBehaviour
         m_Anim.SetFloat("vSpeed", m_Rigidbody2D.velocity.y);
     }
 
-
     public void Move(float move, bool crouch, bool jump)
+    {
+        
+        if (!GlobalState.Instance.PlayerCanMove && tag.Equals("Player"))
+        {
+            move = 0.0f;
+            jump = false;
+            crouch = false;
+        }
+        AutoMove(move, crouch, jump);
+    }
+
+    // AutoMove moves the character regardless of whether the player can move.
+    // This should only be used if we are moving the character automatically.
+    public void AutoMove(float move, bool crouch, bool jump)
     {
         // If crouching, check to see if the character can stand up
         if (!crouch && m_Anim.GetBool("Crouch"))

@@ -20,14 +20,21 @@ public class DialogueActivateBehaviour : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collider)
     {
-        if((activated && activateOnce) || !collider.gameObject.tag.Equals("Player")) return;
+        if (!isActiveAndEnabled) return;
+        if ((activated && activateOnce) || !collider.gameObject.tag.Equals("Player")) return;
+        
         typeText.SetText(dialogue);
         activated = true;
+        if (freezeOnTrigger)
+        {
+            GlobalState.Instance.PlayerCanMove = false;
+        }
     }
 
     // Update is called once per frame
     void OnCollisionEnter2D(Collision2D yay)
     {
+        if (!isActiveAndEnabled) return;
         if ((activated && activateOnce) || !yay.gameObject.tag.Equals("Player")) return;
         typeText.SetText(dialogue);
 
