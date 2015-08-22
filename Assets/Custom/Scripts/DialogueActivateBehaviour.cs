@@ -18,6 +18,11 @@ public class DialogueActivateBehaviour : MonoBehaviour
         typeText = textBox.GetComponent<TypeTextBehaviour>();
     }
 
+    void Update()
+    {
+
+    }
+
     void OnTriggerEnter2D(Collider2D collider)
     {
         if (!isActiveAndEnabled) return;

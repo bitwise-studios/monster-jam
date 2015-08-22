@@ -50,7 +50,6 @@ public class TypeTextBehaviour : MonoBehaviour
     {
         if (targetText.Length <= text.text.Length)
         {
-            GlobalState.Instance.PlayerCanMove = true;
             return;
         }
 
@@ -84,6 +83,11 @@ public class TypeTextBehaviour : MonoBehaviour
         counter = ticksPerType;
 
         GlobalState.Instance.PlayerCanMove = false;
+    }
+
+    public bool IsDone()
+    {
+        return targetText == text.text;
     }
 }
 
