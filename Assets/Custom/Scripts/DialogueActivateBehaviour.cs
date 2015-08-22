@@ -7,7 +7,8 @@ public class DialogueActivateBehaviour : MonoBehaviour
     [SerializeField] private GameObject textBox;
     private TypeTextBehaviour typeText;
     [SerializeField] private string dialogue = "";
-    [SerializeField] private bool activateOnce;
+    [SerializeField] private bool activateOnce = true;
+    [SerializeField] private bool freezeOnTrigger = false;
     
     private bool activated = false;
 
