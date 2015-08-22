@@ -9,6 +9,7 @@ public class TypeTextBehaviour : MonoBehaviour
     private Text text;
     private string targetText;
     [SerializeField] private AudioClip audioClip;
+    [SerializeField] private Queue stringQueue;
 
     // Use this for initialization
     void Start()
@@ -16,11 +17,12 @@ public class TypeTextBehaviour : MonoBehaviour
         text = GetComponent<Text>();
         text.text = "";
         targetText = text.text;
+        stringQueue = new Queue();
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Return))
+        if (Input.GetButtonDown("Submit"))
         {
             if(targetText.Length > text.text.Length)
             {
@@ -29,8 +31,16 @@ public class TypeTextBehaviour : MonoBehaviour
             }
             else
             {
-                targetText = "";
-                text.text = "";
+                // Enqueue next string
+                if(stringQueue.Count != 0)
+                {
+                    ProcessQueueNext();
+                }
+                else
+                {
+                    targetText = "";
+                    text.text = "";
+                }
             }
         }
     }
@@ -59,6 +69,16 @@ public class TypeTextBehaviour : MonoBehaviour
         counter = ticksPerType;
     }
 
+    public void EnqueueText(string s)
+    {
+        stringQueue.Enqueue(s);
+    }
 
+    public void ProcessQueueNext()
+    {
+        targetText = (string) stringQueue.Dequeue();
+        text.text = "";
+        counter = ticksPerType;
+    }
 }
 
