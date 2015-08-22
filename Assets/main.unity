@@ -206,7 +206,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
 --- !u!1 &299205301
 GameObject:
   m_ObjectHideFlags: 0
@@ -237,7 +237,7 @@ RectTransform:
   m_Children:
   - {fileID: 473332506}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -361,8 +361,8 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: -270, y: -140}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: -234.800003, y: -106}
+  m_SizeDelta: {x: 230.5, y: 98}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &473332507
 MonoBehaviour:
@@ -377,6 +377,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ticksPerType: 5
   audioClip: {fileID: 8300000, guid: b3a8f46f90617d147840958186fa35dd, type: 3}
+--- !u!1 &571141699 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 100000, guid: a038b284634e29f4aaf058814aa61a6f, type: 2}
+  m_PrefabInternal: {fileID: 1930742144}
+--- !u!114 &571141700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 571141699}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a006ad66fca9f0409414f16d0bc41df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deathClip: {fileID: 8300000, guid: 687440e3d75ae0448abbebcd0298d898, type: 3}
 --- !u!1001 &1009935092
 Prefab:
   m_ObjectHideFlags: 0
@@ -434,7 +450,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26961fa1a7ba32347b24ac68fbeb0744, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogue: 
+  textBox: {fileID: 473332503}
+  dialogue: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris semper
+    in ante eget luctus. Sed viverra ante tempor neque tempor faucibus. Sed laoreet
+    nunc eget fringilla venenatis. Integer consectetur suscipit lectus dignissim ultricies.
+    In ac dui ante. Duis vehicula, lorem quis tincidunt molestie, magna urna vehicula
+    mi, ac imperdiet nisl urna in tortor. Nam viverra mollis nisl, lacinia iaculis
+    eros mollis ac.  Maecenas hendrerit scelerisque nibh, ut mollis lectus placerat
+    et. Vestibulum hendrerit leo neque, a aliquet urna tincidunt sed. Morbi mi massa,
+    molestie id magna ac, efficitur imperdiet augue. Ut dapibus porta porttitor. Curabitur
+    felis ex, vulputate vitae libero vitae, gravida tempus orci. Cras pulvinar augue
+    a mollis consequat. Cras sodales leo a pellentesque euismod. Aenean feugiat neque
+    sit amet rutrum condimentum. Curabitur eget odio in tortor viverra luctus. Quisque
+    at quam et libero pharetra egestas a sed mi. Praesent sit amet nunc orci. Nunc
+    in ullamcorper nisl, et rutrum est. Sed a lacinia justo. Nam sed arcu neque. Mauris
+    sollicitudin mi in nibh mattis scelerisque.  Etiam ut massa tempor, aliquam quam
+    ut, accumsan augue. Nullam dui nulla, consequat ut dictum vel, interdum in massa.
+    Praesent congue, risus sit amet scelerisque pulvinar, turpis lorem pretium nulla,
+    vitae accumsan tortor elit quis est. Curabitur eleifend dictum mauris, vel cursus
+    elit hendrerit eu. Duis et sodales mauris. Vivamus luctus risus vel mauris laoreet,
+    sed fringilla est venenatis. Curabitur quis finibus purus. Aliquam erat volutpat.
+    Nullam luctus augue vitae libero auctor rutrum. Integer faucibus neque sed egestas
+    egestas. Etiam vel dui commodo ante finibus pharetra. Suspendisse in metus id
+    orci euismod imperdiet. Aenean eget varius nisi. Lorem ipsum dolor sit amet, consectetur
+    adipiscing elit.  Nunc aliquam justo in varius auctor. Integer et ultrices diam.
+    Sed quis bibendum mi, eget vehicula nisl. Phasellus vitae ante odio. Nulla nec
+    ornare ipsum. Pellentesque convallis libero non ultricies ultrices. Curabitur
+    vitae arcu ut urna aliquam convallis a id elit. Nam dictum non magna sed accumsan.
+    Nullam aliquam ante eget sem accumsan, ac pretium dolor scelerisque. Nam faucibus
+    nulla in massa accumsan, ac sollicitudin nibh pulvinar. Ut vel massa diam.  Quisque
+    blandit justo et magna fringilla scelerisque. Pellentesque aliquam, lorem sit
+    amet auctor luctus, tortor mi tempor enim, sed vulputate urna arcu eu purus. Nulla
+    sapien tortor, porta at consequat quis, semper id augue. Vestibulum a eros in
+    massa euismod ullamcorper id eget urna. Proin egestas finibus risus. Nullam nec
+    mattis tellus. Vivamus at sodales odio, quis porta nulla. Nam convallis molestie
+    tincidunt. Aliquam erat volutpat.
 --- !u!1001 &1031733853
 Prefab:
   m_ObjectHideFlags: 0
@@ -574,6 +624,49 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+--- !u!1001 &1930742144
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 400000, guid: a038b284634e29f4aaf058814aa61a6f, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -19.2000008
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: a038b284634e29f4aaf058814aa61a6f, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -3.9000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: a038b284634e29f4aaf058814aa61a6f, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: a038b284634e29f4aaf058814aa61a6f, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: a038b284634e29f4aaf058814aa61a6f, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: a038b284634e29f4aaf058814aa61a6f, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: a038b284634e29f4aaf058814aa61a6f, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: a038b284634e29f4aaf058814aa61a6f, type: 2}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 11400000, guid: a038b284634e29f4aaf058814aa61a6f, type: 2}
+  m_ParentPrefab: {fileID: 100100000, guid: a038b284634e29f4aaf058814aa61a6f, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &2024158582
 GameObject:
   m_ObjectHideFlags: 0
@@ -661,7 +754,7 @@ Transform:
   m_Children:
   - {fileID: 1441486242}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
 --- !u!114 &2024158588
 MonoBehaviour:
   m_ObjectHideFlags: 0
