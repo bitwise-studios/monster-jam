@@ -4,7 +4,9 @@ using UnityEngine.UI;
 
 public class SwagBehaviour : MonoBehaviour
 {
-    public GameObject textBox;
+    private GameObject textBox;
+    private TypeTextBehaviour typeText;
+    public string dialogue;
 
     private bool activated = false;
 
@@ -12,15 +14,18 @@ public class SwagBehaviour : MonoBehaviour
     void Start()
     {
         textBox = GameObject.Find("Text");
+        typeText = textBox.GetComponent<TypeTextBehaviour>();
     }
 
     // Update is called once per frame
     void OnCollisionEnter2D(Collision2D yay)
     {
         if (activated || !yay.gameObject.tag.Equals("Player")) return;
-        textBox.GetComponent<Text>().text = "SWAGBLAZE";
+        typeText.SetText("Swag the yolo at dawn");
 
         activated = true;
     }
+
+
 }
 
