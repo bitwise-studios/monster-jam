@@ -33,4 +33,5 @@ public class GlobalState : Singleton<GlobalState> {
     // Criminal: 0 for robber, 1 for murderer, 2 for sadist
     public int FinalChoice = 0;
 
+	public string newspaperHeadline = "Newspaper Headline Not Set On Global State";
 }
