@@ -7,6 +7,8 @@ public class DialogueController : MonoBehaviour {
     [SerializeField] private GameObject textBox1;
     private TypeTextBehaviour typeText;
 
+    private ArrayList currentDialogue;
+
     // Use this for initialization
     void Start ()
     {
@@ -14,7 +16,7 @@ public class DialogueController : MonoBehaviour {
         conversations = new Hashtable();
         // Load the dialogue for the scene
         // TODO below is debug ONLY
-        conversations.Add("test1", new ArrayList().Add("Character\nJust testing");
+        conversations.Add("test1", new ArrayList().Add("Character\nJust testing"));
     }
 	
 	// Update is called once per frame
@@ -22,8 +24,15 @@ public class DialogueController : MonoBehaviour {
 	
 	}
 
-    void showDialogue(string id, bool freeze)
+    public void showDialogue(string id, bool freeze)
     {
-
+        if (freeze)
+            GlobalState.Instance.PlayerCanMove = false;
+        currentDialogue = (ArrayList) conversations[id];
+        foreach(string item in currentDialogue)
+        {
+            typeText.EnqueueText(item);
+        }
+        typeText.ProcessQueueNext();
     }
 }
