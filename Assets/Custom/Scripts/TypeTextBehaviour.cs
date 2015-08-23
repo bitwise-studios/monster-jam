@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using System.Collections.Generic;
 
 public class TypeTextBehaviour : MonoBehaviour
 {
@@ -9,7 +10,7 @@ public class TypeTextBehaviour : MonoBehaviour
     private Text text;
     private string targetText;
     [SerializeField] private AudioClip audioClip;
-    private Queue stringQueue;
+    private Queue<string> stringQueue;
     [SerializeField] private DialogueController controller;
 
     // Use this for initialization
@@ -18,7 +19,7 @@ public class TypeTextBehaviour : MonoBehaviour
         text = GetComponent<Text>();
         text.text = "";
         targetText = text.text;
-        stringQueue = new Queue();
+        stringQueue = new Queue<string>();
     }
 
     void Update()
