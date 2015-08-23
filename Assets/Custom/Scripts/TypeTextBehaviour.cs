@@ -9,7 +9,8 @@ public class TypeTextBehaviour : MonoBehaviour
     private Text text;
     private string targetText;
     [SerializeField] private AudioClip audioClip;
-    [SerializeField] private Queue stringQueue;
+    private Queue stringQueue;
+    [SerializeField] private DialogueController controller;
 
     // Use this for initialization
     void Start()
@@ -50,6 +51,7 @@ public class TypeTextBehaviour : MonoBehaviour
     {
         if (targetText.Length <= text.text.Length)
         {
+            controller.showDialogueComplete(this);
             return;
         }
 
@@ -80,7 +82,6 @@ public class TypeTextBehaviour : MonoBehaviour
         targetText = (string) stringQueue.Dequeue();
         text.text = "";
         counter = ticksPerType;
-
     }
 
     public bool IsDone()

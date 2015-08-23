@@ -169,8 +169,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26961fa1a7ba32347b24ac68fbeb0744, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textBox: {fileID: 473332503}
-  dialogue: Yay you hit me!
+  dialogueControllerObject: {fileID: 787246015}
+  dialogueId: test1
   activateOnce: 1
   freezeOnTrigger: 1
 --- !u!4 &107268922
@@ -464,10 +464,6 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
---- !u!1 &473332503 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 179232, guid: 9d36a064eb5461e45aef6f98072e1c64, type: 2}
-  m_PrefabInternal: {fileID: 595433163}
 --- !u!1 &571141699 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100000, guid: a038b284634e29f4aaf058814aa61a6f, type: 2}
@@ -575,6 +571,10 @@ Prefab:
       propertyPath: m_SizeDelta.x
       value: 798
       objectReference: {fileID: 0}
+    - target: {fileID: 11444266, guid: 9d36a064eb5461e45aef6f98072e1c64, type: 2}
+      propertyPath: controller
+      value: 
+      objectReference: {fileID: 787246017}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9d36a064eb5461e45aef6f98072e1c64, type: 2}
   m_IsPrefabParent: 0
@@ -622,6 +622,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e97bcb4fabd5bc4eb8ba450577c5aea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  textBox1: {fileID: 1736361569}
 --- !u!1001 &1009935092
 Prefab:
   m_ObjectHideFlags: 0
@@ -683,41 +684,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26961fa1a7ba32347b24ac68fbeb0744, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textBox: {fileID: 473332503}
-  dialogue: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris semper
-    in ante eget luctus. Sed viverra ante tempor neque tempor faucibus. Sed laoreet
-    nunc eget fringilla venenatis. Integer consectetur suscipit lectus dignissim ultricies.
-    In ac dui ante. Duis vehicula, lorem quis tincidunt molestie, magna urna vehicula
-    mi, ac imperdiet nisl urna in tortor. Nam viverra mollis nisl, lacinia iaculis
-    eros mollis ac.  Maecenas hendrerit scelerisque nibh, ut mollis lectus placerat
-    et. Vestibulum hendrerit leo neque, a aliquet urna tincidunt sed. Morbi mi massa,
-    molestie id magna ac, efficitur imperdiet augue. Ut dapibus porta porttitor. Curabitur
-    felis ex, vulputate vitae libero vitae, gravida tempus orci. Cras pulvinar augue
-    a mollis consequat. Cras sodales leo a pellentesque euismod. Aenean feugiat neque
-    sit amet rutrum condimentum. Curabitur eget odio in tortor viverra luctus. Quisque
-    at quam et libero pharetra egestas a sed mi. Praesent sit amet nunc orci. Nunc
-    in ullamcorper nisl, et rutrum est. Sed a lacinia justo. Nam sed arcu neque. Mauris
-    sollicitudin mi in nibh mattis scelerisque.  Etiam ut massa tempor, aliquam quam
-    ut, accumsan augue. Nullam dui nulla, consequat ut dictum vel, interdum in massa.
-    Praesent congue, risus sit amet scelerisque pulvinar, turpis lorem pretium nulla,
-    vitae accumsan tortor elit quis est. Curabitur eleifend dictum mauris, vel cursus
-    elit hendrerit eu. Duis et sodales mauris. Vivamus luctus risus vel mauris laoreet,
-    sed fringilla est venenatis. Curabitur quis finibus purus. Aliquam erat volutpat.
-    Nullam luctus augue vitae libero auctor rutrum. Integer faucibus neque sed egestas
-    egestas. Etiam vel dui commodo ante finibus pharetra. Suspendisse in metus id
-    orci euismod imperdiet. Aenean eget varius nisi. Lorem ipsum dolor sit amet, consectetur
-    adipiscing elit.  Nunc aliquam justo in varius auctor. Integer et ultrices diam.
-    Sed quis bibendum mi, eget vehicula nisl. Phasellus vitae ante odio. Nulla nec
-    ornare ipsum. Pellentesque convallis libero non ultricies ultrices. Curabitur
-    vitae arcu ut urna aliquam convallis a id elit. Nam dictum non magna sed accumsan.
-    Nullam aliquam ante eget sem accumsan, ac pretium dolor scelerisque. Nam faucibus
-    nulla in massa accumsan, ac sollicitudin nibh pulvinar. Ut vel massa diam.  Quisque
-    blandit justo et magna fringilla scelerisque. Pellentesque aliquam, lorem sit
-    amet auctor luctus, tortor mi tempor enim, sed vulputate urna arcu eu purus. Nulla
-    sapien tortor, porta at consequat quis, semper id augue. Vestibulum a eros in
-    massa euismod ullamcorper id eget urna. Proin egestas finibus risus. Nullam nec
-    mattis tellus. Vivamus at sodales odio, quis porta nulla. Nam convallis molestie
-    tincidunt. Aliquam erat volutpat.
+  dialogueControllerObject: {fileID: 0}
+  dialogueId: 
   activateOnce: 1
   freezeOnTrigger: 0
 --- !u!1001 &1031733853
@@ -1020,6 +988,10 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+--- !u!1 &1736361569 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 105920, guid: 9d36a064eb5461e45aef6f98072e1c64, type: 2}
+  m_PrefabInternal: {fileID: 595433163}
 --- !u!1 &1869524605 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100002, guid: 87a2357765801c34292d6718d8b4d770, type: 2}
