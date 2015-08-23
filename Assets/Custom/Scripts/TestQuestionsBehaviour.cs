@@ -95,7 +95,7 @@ public class TestQuestionsBehaviour : MonoBehaviour {
 			for (int i = 0; i < 4; i++) {
 				buttonTexts[i].gameObject.transform.parent.gameObject.SetActive(false);
 			}
-            GlobalState.Instance.testResult = score / questions.Length;
+            GlobalState.Instance.TestResult = score / questions.Length;
 			questionText.text = "You correctly answered " + score + " of " + questions.Length + " questions.";
 			return;
 		}

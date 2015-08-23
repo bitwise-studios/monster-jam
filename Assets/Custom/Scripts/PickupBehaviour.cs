@@ -9,7 +9,7 @@ public class PickupBehaviour : MonoBehaviour {
 	void Update () {
 		if (playerIn && CrossPlatformInputManager.GetButtonDown("EnterDoor") && GlobalState.Instance.PlayerCanMove)
 		{
-			GlobalState.Instance.inventory.Add(gameObject.name);
+			GlobalState.Instance.Inventory.Add(gameObject.name);
 			Destroy(gameObject);
 		}
 	}
