@@ -68,7 +68,6 @@ public class TypeTextBehaviour : MonoBehaviour
         text.text = "";
         counter = ticksPerType;
         
-        GlobalState.Instance.PlayerCanMove = false;
     }
 
     public void EnqueueText(string s)
@@ -82,7 +81,6 @@ public class TypeTextBehaviour : MonoBehaviour
         text.text = "";
         counter = ticksPerType;
 
-        GlobalState.Instance.PlayerCanMove = false;
     }
 
     public bool IsDone()

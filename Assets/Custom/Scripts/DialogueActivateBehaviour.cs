@@ -4,18 +4,21 @@ using UnityEngine.UI;
 
 public class DialogueActivateBehaviour : MonoBehaviour
 {
-    [SerializeField] private GameObject textBox;
-    private TypeTextBehaviour typeText;
-    [SerializeField] private string dialogue = "";
+    [SerializeField] private GameObject dialogueControllerObject;
+    [SerializeField] private string dialogueId = "";
     [SerializeField] private bool activateOnce = true;
     [SerializeField] private bool freezeOnTrigger = false;
+
+    private DialogueController controller;
     
     private bool activated = false;
 
     // Use this for initialization
     void Start()
     {
-        typeText = textBox.GetComponent<TypeTextBehaviour>();
+        if (dialogueControllerObject == null)
+            dialogueControllerObject = GameObject.Find("DialogueController");
+        controller = dialogueControllerObject.GetComponent<DialogueController>();
     }
 
     void Update()
