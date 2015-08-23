@@ -39,6 +39,40 @@ public class TestQuestionsBehaviour : MonoBehaviour {
 		}
 	};
 
+	private string[][] easyQuestions = {
+		new string[]
+		{"1+1=?",
+			"3",
+			"2",
+			"sin(0.5)",
+			"11",
+			"1"
+		},
+		new string[]
+		{"4*5=?",
+			"9.3",
+			"2x",
+			"77",
+			"20",
+			"3"
+		},
+		new string[]
+		{"What is the capital of the USA?",
+			"Washington DC",
+			"New York",
+			"Chicago",
+			"Whiterun",
+			"0"
+		},
+		new string[]
+		{"What is the capital of Canada?",
+			"Toronto",
+			"Halifax",
+			"Ottawa",
+			"Swagville",
+			"2"
+		}
+	};
 	private string[][] questions;
 	private int questionIndex;
 	public Text[] buttonTexts = new Text[4];
@@ -48,7 +82,7 @@ public class TestQuestionsBehaviour : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		questions = hardQuestions;
+		questions = easyQuestions;//hardQuestions;
 		questionIndex = -1;
 		nextQuestion();
 	}
