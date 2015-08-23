@@ -79,6 +79,7 @@ public class TestQuestionsBehaviour : MonoBehaviour {
 	public Text questionText;
 	private string correctResponse;
 	public Text correctText;
+	private int score = 0;
 
 	// Use this for initialization
 	void Start () {
@@ -90,7 +91,11 @@ public class TestQuestionsBehaviour : MonoBehaviour {
 	void nextQuestion() {
 		questionIndex++;
 		if (questionIndex >= questions.Length) {
-			// give up
+			// done
+			for (int i = 0; i < 4; i++) {
+				buttonTexts[i].gameObject.transform.parent.gameObject.SetActive(false);
+			}
+			questionText.text = "You correctly answered " + score + " of " + questions.Length + " questions.";
 			return;
 		}
 		string[] questionData = questions[questionIndex];
@@ -102,7 +107,9 @@ public class TestQuestionsBehaviour : MonoBehaviour {
 	}
 
 	public void QuizButtonClicked(string s) {
-		correctText.text = (s.Equals(correctResponse)? "Correct!": "WRONG");
+		bool carrot = s.Equals(correctResponse);
+		//correctText.text = (carrot? "Correct!": "WRONG");
+		score += (carrot? 1: 0);
 		nextQuestion ();
 	}
 }
