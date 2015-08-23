@@ -170,7 +170,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueControllerObject: {fileID: 787246015}
-  dialogueId: test1
+  dialogueId: athomestart
   activateOnce: 1
   freezeOnTrigger: 1
 --- !u!4 &107268922
@@ -623,6 +623,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textBox1: {fileID: 1736361569}
+  dialogueXml: {fileID: 4900000, guid: 2aebfeff784080746b306d6ae2e8c3f8, type: 3}
 --- !u!1001 &1009935092
 Prefab:
   m_ObjectHideFlags: 0

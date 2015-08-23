@@ -1,26 +1,26 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class DialogueController : MonoBehaviour {
 
-    private Hashtable conversations;
+    private Dictionary<string, List<string>> conversations;
     [SerializeField] private GameObject textBox1;
     private TypeTextBehaviour typeText1;
+    [SerializeField]
+    private TextAsset dialogueXml;
 
     private bool textBox1Done = true;
 
-    private ArrayList currentDialogue;
+    private List<string> currentDialogue;
 
     // Use this for initialization
     void Start ()
     {
         typeText1 = textBox1.GetComponentInChildren<TypeTextBehaviour>();
-        conversations = new Hashtable();
         // Load the dialogue for the scene
-        // TODO below is debug ONLY
-        ArrayList testList = new ArrayList();
-        testList.Add("Character\nJust testing");
-        conversations.Add("test1", testList);
+        conversations = DialogueLoader.LoadDialogue(dialogueXml.text);
+        print(dialogueXml.text);
     }
 	
 	// Update is called once per frame
@@ -36,7 +36,7 @@ public class DialogueController : MonoBehaviour {
         if (freeze)
             GlobalState.Instance.PlayerCanMove = false;
         textBox1Done = false;
-        currentDialogue = (ArrayList) conversations[id];
+        currentDialogue = conversations[id];
         foreach(string item in currentDialogue)
         {
             typeText1.EnqueueText(item);
