@@ -34,12 +34,19 @@ public class DialogueController : MonoBehaviour {
 
     public void showDialogue(string id, bool freeze)
     {
+        StartCoroutine(showDialogueHelper(id, freeze));
+    }
+
+    IEnumerator showDialogueHelper(string id, bool freeze)
+    {
+        
+        textBox1.SetActive(true);
+        yield return new WaitForEndOfFrame();
         if (freeze)
             GlobalState.Instance.PlayerCanMove = false;
-        textBox1.SetActive(true);
         textBox1Done = false;
         currentDialogue = conversations[id];
-        foreach(string item in currentDialogue)
+        foreach (string item in currentDialogue)
         {
             typeText1.EnqueueText(item);
         }
