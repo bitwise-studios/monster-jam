@@ -20,7 +20,8 @@ public class DialogueController : MonoBehaviour {
         typeText1 = textBox1.GetComponentInChildren<TypeTextBehaviour>();
         // Load the dialogue for the scene
         conversations = DialogueLoader.LoadDialogue(dialogueXml.text);
-        print(dialogueXml.text);
+
+        textBox1.SetActive(false);
     }
 	
 	// Update is called once per frame
@@ -35,6 +36,7 @@ public class DialogueController : MonoBehaviour {
     {
         if (freeze)
             GlobalState.Instance.PlayerCanMove = false;
+        textBox1.SetActive(true);
         textBox1Done = false;
         currentDialogue = conversations[id];
         foreach(string item in currentDialogue)
@@ -48,6 +50,7 @@ public class DialogueController : MonoBehaviour {
     {
         if(typeText1 == typeText)
         {
+            textBox1.SetActive(false);
             textBox1Done = true;
         }
     }

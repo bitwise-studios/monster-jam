@@ -39,6 +39,7 @@ public class TypeTextBehaviour : MonoBehaviour
                 }
                 else
                 {
+                    controller.showDialogueComplete(this);
                     targetText = "";
                     text.text = "";
                 }
@@ -51,7 +52,6 @@ public class TypeTextBehaviour : MonoBehaviour
     {
         if (targetText.Length <= text.text.Length)
         {
-            controller.showDialogueComplete(this);
             return;
         }
 
