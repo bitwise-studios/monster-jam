@@ -36,6 +36,7 @@ public class DialogueLoader
             var dialogueStrs = new List<string>(dialogueElem.ChildNodes.Count);
             foreach (XmlNode textElem in dialogueElem)
             {
+				if (!(textElem is XmlElement)) continue;
                 dialogueStrs.Add(dialogueProc(textElem, charactersMap));
             }
             dialogueMap[dialogueElem.Attributes["id"].Value] = dialogueStrs;
